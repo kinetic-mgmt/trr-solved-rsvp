@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TRR: Solved — RSVP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cormorant Garamond',serif;background:#e6ded0;color:#2c2a26}
+.wrap{max-width:520px;margin:0 auto;background:#f3eddf;min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.15)}
+.hero{position:relative;background:#14110c url('https://media-public.canva.com/pLOgc/MAESWApLOgc/1/s2.jpg') center/cover;padding:52px 26px 128px;text-align:center}
+.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(10,8,4,.28),rgba(10,8,4,.42))}
+.ring{position:relative;width:210px;height:210px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.ring svg{position:absolute;inset:0;width:100%;height:100%}
+.gold{background:linear-gradient(100deg,#7a5a1e,#b8901f,#f3e2a0,#fffbe8,#d9b45a,#9a7420,#f0d98a,#8a6620,#caa24c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.trr{font-family:'Cormorant',serif;font-weight:500;font-size:30px;letter-spacing:6px;margin-left:6px;margin-top:-4px}
+.solved{font-family:'Pinyon Script',cursive;color:#f4ecd8;font-size:62px;line-height:.5;margin-top:22px}
+.htxt{position:relative;margin-top:26px}
+.htxt .k{font-family:'Cormorant',serif;letter-spacing:5px;font-size:14px;color:#e7cf94;font-weight:500}
+.htxt .d{font-family:'Cormorant',serif;font-size:17px;letter-spacing:1px;color:#efe6cf;margin-top:10px;line-height:1.6}
+.card{position:relative;margin:-92px 20px 0;background:#f7f2e7;border:1px solid #e3d8bf;border-radius:2px;padding:30px 24px 34px;box-shadow:0 14px 40px rgba(0,0,0,.14)}
+.rsvp-t{text-align:center;font-family:'Cormorant',serif;font-size:34px;letter-spacing:5px;color:#1a1a1a;font-weight:500}
+.sub{text-align:center;font-style:italic;font-size:17px;color:#6a6350;margin-top:6px;margin-bottom:22px}
+label.fld{display:block;margin-top:22px}
+.lbl{font-family:'Cormorant',serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:#8a6a20;font-weight:600;margin-bottom:9px;display:block}
+input[type=text],textarea{width:100%;border:none;border-bottom:1.5px solid #cdbf9e;background:transparent;font-family:'Cormorant Garamond',serif;font-size:20px;color:#2c2a26;padding:6px 2px;outline:none}
+input[type=text]:focus,textarea:focus{border-color:#b98f3a}
+textarea{resize:none;min-height:44px}
+.opts{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{display:block;border:1.5px solid #d8cba8;border-radius:2px;padding:13px 15px;cursor:pointer;transition:.15s;background:#fbf8ef}
+.opt .box b{font-family:'Cormorant',serif;font-size:19px;font-weight:600;color:#1a1a1a;letter-spacing:.5px}
+.opt .box small{display:block;font-family:'Cormorant Garamond',serif;font-size:15px;color:#7a7360;margin-top:2px;line-height:1.4}
+.opt input:checked + .box{border-color:#b98f3a;background:#fff;box-shadow:0 0 0 1px #b98f3a inset}
+.opt input:checked + .box b{color:#8a6a20}
+.two{flex-direction:row}.two .opt{flex:1}
+.rule{width:54px;height:0;border-bottom:1px solid #cbb87e;margin:26px auto 0}
+#menu{overflow:hidden;max-height:0;transition:max-height .35s ease;opacity:.4}
+#menu.open{max-height:1600px;opacity:1}
+button{width:100%;margin-top:30px;background:#14110c;color:#f0d98a;border:none;padding:16px;font-family:'Cormorant',serif;font-size:18px;letter-spacing:4px;text-transform:uppercase;cursor:pointer;border-radius:2px}
+button:disabled{opacity:.6}
+.foot{text-align:center;padding:22px;font-family:'Cormorant',serif;font-size:12px;letter-spacing:3px;color:#9a9078}
+.err{color:#a3402f;text-align:center;font-size:16px;margin-top:14px;display:none}
+</style></head><body><div class="wrap">
+<div class="hero"><div class="ring">
+<svg viewBox="0 0 210 210"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6a20"/><stop offset=".3" stop-color="#f3e0a0"/><stop offset=".45" stop-color="#fff7d8"/><stop offset=".6" stop-color="#c9a24c"/><stop offset=".8" stop-color="#8a6a20"/><stop offset="1" stop-color="#f2dd94"/></linearGradient></defs><circle cx="105" cy="105" r="103" fill="none" stroke="url(#g)" stroke-width="1.6"/></svg>
+<div class="trr gold">TRR:</div><div class="solved">Solved.</div></div>
+<div class="htxt"><div class="k">A PRIVATE BRUNCH PREVIEW</div><div class="d">Thursday, September 17 &nbsp;&middot;&nbsp; 10:00 to Noon<br>RH Rooftop &nbsp;&middot;&nbsp; Oklahoma City</div></div></div>
+<form id="f" class="card">
+<div class="rsvp-t">R S V P</div><div class="sub">Kindly reply by September 10</div>
+<label class="fld"><span class="lbl">Your Name</span><input type="text" name="full_name" required placeholder="First and last name"></label>
+<div class="fld"><span class="lbl">Will you join us?</span><div class="opts two">
+<label class="opt"><input type="radio" name="attending" value="yes" required onchange="tog(1)"><span class="box"><b>Joyfully Accept</b></span></label>
+<label class="opt"><input type="radio" name="attending" value="no" onchange="tog(0)"><span class="box"><b>Regretfully Decline</b></span></label>
+</div></div>
+<div id="menu">
+<div class="rule"></div>
+<div class="fld"><span class="lbl">Select Your Entr&eacute;e</span><div class="opts">
+<label class="opt"><input type="radio" name="entree" value="Italian Benedict"><span class="box"><b>Italian Benedict</b><small>San Daniele prosciutto, parmesan hollandaise, charred ciabatta</small></span></label>
+<label class="opt"><input type="radio" name="entree" value="RH Scramble"><span class="box"><b>RH Scramble</b><small>Farm eggs, cr&egrave;me fra&icirc;che, avocado, chives</small></span></label>
+<label class="opt"><input type="radio" name="entree" value="Swedish Pancakes"><span class="box"><b>Swedish Pancakes</b><small>Impossibly thin, butter, Vermont maple syrup</small></span></label>
+</div></div>
+<div class="fld"><span class="lbl">Select Your Dessert</span><div class="opts">
+<label class="opt"><input type="radio" name="dessert" value="Strawberries and Cream"><span class="box"><b>Strawberries &amp; Cream</b><small>Chantilly cream</small></span></label>
+<label class="opt"><input type="radio" name="dessert" value="Warm Chocolate Chip Cookie"><span class="box"><b>Warm Chocolate Chip Cookie</b><small>Sea salt</small></span></label>
+</div></div>
+<label class="fld"><span class="lbl">Dietary needs or allergies</span><textarea name="dietary" placeholder="Optional"></textarea></label>
+</div>
+<label class="fld"><span class="lbl">Best number or email for updates</span><input type="text" name="contact" placeholder="Optional"></label>
+<button type="submit" id="btn">Reserve My Seat</button>
+<div class="err" id="err">Something went wrong. Please try again.</div>
+</form>
+<div class="foot">AN INVITATION FROM &middot; BANK ON BROOKE</div></div>
+<script>
+var API="https://fegzfjftfgqjjgatihyi.supabase.co/functions/v1/trr-rsvp";
+function tog(a){var m=document.getElementById('menu');var ins=m.querySelectorAll('input[type=radio]');if(a){m.classList.add('open');document.querySelector('input[name=entree]').required=true;document.querySelector('input[name=dessert]').required=true;}else{m.classList.remove('open');ins.forEach(function(i){i.required=false;i.checked=false;});}}
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var btn=document.getElementById('btn'),err=document.getElementById('err');
+ err.style.display='none';btn.disabled=true;btn.textContent='Reserving...';
+ var fd=new FormData(e.target);
+ fetch(API,{method:'POST',body:fd})
+ .then(function(r){if(!r.ok)throw 0;return r;})
+ .then(function(){
+   var name=(fd.get('full_name')||'').split(' ')[0]||'friend';
+   var acc=fd.get('attending')==='yes';
+   var msg=acc?'Your seat is reserved. We cannot wait to host you on September 17.':'Thank you for letting us know. You will be missed.';
+   document.querySelector('.wrap').innerHTML='<div class="hero"><div class="ring"><svg viewBox="0 0 210 210"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6a20"/><stop offset=".45" stop-color="#fff7d8"/><stop offset="1" stop-color="#8a6a20"/></linearGradient></defs><circle cx="105" cy="105" r="103" fill="none" stroke="url(#g2)" stroke-width="1.6"/></svg><div class="trr gold">TRR:</div><div class="solved">Solved.</div></div></div><div class="card" style="text-align:center;margin-top:-92px"><div class="rsvp-t" style="font-size:30px">Thank you, '+name+'.</div><div class="sub" style="margin-top:14px;font-size:19px">'+msg+'</div><div class="rule"></div></div><div class="foot">AN INVITATION FROM &middot; BANK ON BROOKE</div>';
+   window.scrollTo(0,0);
+ })
+ .catch(function(){btn.disabled=false;btn.textContent='Reserve My Seat';err.style.display='block';});
+});
+</script>
+</body></html>
