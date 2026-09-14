@@ -52,9 +52,11 @@ button:disabled{opacity:.6}
 </div></div>
 <div id="menu">
 <div class="rule"></div>
-<div class="fld"><span class="lbl">Your Brunch</span><div class="opts">
-<label class="opt"><span class="box" style="cursor:default;border-color:#b98f3a;background:#fff"><b>RH Scramble</b><small>Farm eggs, cr&egrave;me fra&icirc;che, avocado, chives, with shared starters and sides for the table</small></span></label>
-</div><input type="hidden" name="entree" id="entreeField" value=""></div>
+<div class="fld"><span class="lbl">Select Your Entr&eacute;e</span><div class="opts">
+<label class="opt"><input type="radio" name="entree" value="Italian Benedict"><span class="box"><b>Italian Benedict</b><small>San Daniele prosciutto, parmesan hollandaise, charred ciabatta</small></span></label>
+<label class="opt"><input type="radio" name="entree" value="RH Scramble"><span class="box"><b>RH Scramble</b><small>Farm eggs, cr&egrave;me fra&icirc;che, avocado, chives</small></span></label>
+<label class="opt"><input type="radio" name="entree" value="Swedish Pancakes"><span class="box"><b>Swedish Pancakes</b><small>Impossibly thin, butter, Vermont maple syrup</small></span></label>
+</div></div>
 <div class="fld"><span class="lbl">Select Your Dessert</span><div class="opts">
 <label class="opt"><input type="radio" name="dessert" value="Strawberries and Cream"><span class="box"><b>Strawberries &amp; Cream</b><small>Chantilly cream</small></span></label>
 <label class="opt"><input type="radio" name="dessert" value="Warm Chocolate Chip Cookie"><span class="box"><b>Warm Chocolate Chip Cookie</b><small>Sea salt</small></span></label>
@@ -68,7 +70,7 @@ button:disabled{opacity:.6}
 <div class="foot">AN INVITATION FROM &middot; BANK ON BROOKE</div></div>
 <script>
 var API="https://fegzfjftfgqjjgatihyi.supabase.co/functions/v1/trr-rsvp";
-function tog(a){var m=document.getElementById('menu');var ins=m.querySelectorAll('input[type=radio]');var ef=document.getElementById('entreeField');if(a){m.classList.add('open');ef.value='RH Scramble';document.querySelector('input[name=dessert]').required=true;}else{m.classList.remove('open');ef.value='';ins.forEach(function(i){i.required=false;i.checked=false;});}}
+function tog(a){var m=document.getElementById('menu');var ins=m.querySelectorAll('input[type=radio]');if(a){m.classList.add('open');document.querySelector('input[name=entree]').required=true;document.querySelector('input[name=dessert]').required=true;}else{m.classList.remove('open');ins.forEach(function(i){i.required=false;i.checked=false;});}}
 document.getElementById('f').addEventListener('submit',function(e){
  e.preventDefault();
  var btn=document.getElementById('btn'),err=document.getElementById('err');
