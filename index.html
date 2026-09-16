@@ -43,49 +43,13 @@ button:disabled{opacity:.6}
 <svg viewBox="0 0 210 210"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6a20"/><stop offset=".3" stop-color="#f3e0a0"/><stop offset=".45" stop-color="#fff7d8"/><stop offset=".6" stop-color="#c9a24c"/><stop offset=".8" stop-color="#8a6a20"/><stop offset="1" stop-color="#f2dd94"/></linearGradient></defs><circle cx="105" cy="105" r="103" fill="none" stroke="url(#g)" stroke-width="1.6"/></svg>
 <div class="trr gold">TRR:</div><div class="solved">Solved.</div></div>
 <div class="htxt"><div class="k">A PRIVATE BRUNCH PREVIEW</div><div class="d">Thursday, September 17 &nbsp;&middot;&nbsp; 10:00 to Noon<br>RH Rooftop &nbsp;&middot;&nbsp; Oklahoma City</div></div></div>
-<form id="f" class="card">
-<div class="rsvp-t">R S V P</div><div class="sub">Kindly reply by September 11</div>
-<label class="fld"><span class="lbl">Your Name</span><input type="text" name="full_name" required placeholder="First and last name"></label>
-<div class="fld"><span class="lbl">Will you join us?</span><div class="opts two">
-<label class="opt"><input type="radio" name="attending" value="yes" required onchange="tog(1)"><span class="box"><b>Joyfully Accept</b></span></label>
-<label class="opt"><input type="radio" name="attending" value="no" onchange="tog(0)"><span class="box"><b>Regretfully Decline</b></span></label>
-</div></div>
-<div id="menu">
-<div class="rule"></div>
-<div class="fld"><span class="lbl">Select Your Entr&eacute;e</span><div class="opts">
-<label class="opt"><input type="radio" name="entree" value="Italian Benedict"><span class="box"><b>Italian Benedict</b><small>San Daniele prosciutto, parmesan hollandaise, charred ciabatta</small></span></label>
-<label class="opt"><input type="radio" name="entree" value="RH Scramble"><span class="box"><b>RH Scramble</b><small>Farm eggs, cr&egrave;me fra&icirc;che, avocado, chives</small></span></label>
-<label class="opt"><input type="radio" name="entree" value="Swedish Pancakes"><span class="box"><b>Swedish Pancakes</b><small>Impossibly thin, butter, Vermont maple syrup</small></span></label>
-</div></div>
-<div class="fld"><span class="lbl">Select Your Dessert</span><div class="opts">
-<label class="opt"><input type="radio" name="dessert" value="Strawberries and Cream"><span class="box"><b>Strawberries &amp; Cream</b><small>Chantilly cream</small></span></label>
-<label class="opt"><input type="radio" name="dessert" value="Warm Chocolate Chip Cookie"><span class="box"><b>Warm Chocolate Chip Cookie</b><small>Sea salt</small></span></label>
-</div></div>
-<label class="fld"><span class="lbl">Dietary needs or allergies</span><textarea name="dietary" placeholder="Optional"></textarea></label>
+<div class="card" style="text-align:center;padding:40px 26px 46px">
+<div class="rsvp-t">R S V P</div>
+<div class="sub" style="margin-top:12px">RSVPs are now closed.</div>
+<svg class="rule" width="60" height="6" viewBox="0 0 60 6" style="margin:24px auto 0"><path d="M1 3 H59" stroke="#b98f3a" stroke-width="1.1" stroke-linecap="round"/><circle cx="30" cy="3" r="2" fill="#b98f3a"/></svg>
+<div style="margin-top:24px;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.6;color:#3a362c">Thank you so much for your interest.<br>To ask about your seat, please contact<br><b style="color:#1a1a1a">Brooke Gagliardi</b>.</div>
+<div style="margin-top:12px;font-family:'Cormorant',serif;letter-spacing:1px;font-size:17px"><a href="tel:4059858195" style="color:#8a6a20;text-decoration:none">405-985-8195</a></div>
+<div style="margin-top:5px;font-family:'Cormorant',serif;letter-spacing:1px;font-size:16px"><a href="mailto:bgagliardi@fbhl.com" style="color:#8a6a20;text-decoration:none">bgagliardi@fbhl.com</a></div>
 </div>
-<label class="fld"><span class="lbl">Best number or email for updates</span><input type="text" name="contact" placeholder="Optional"></label>
-<button type="submit" id="btn">Reserve My Seat</button>
-<div class="err" id="err">Something went wrong. Please try again.</div>
-</form>
 <div class="foot">AN INVITATION FROM &middot; BANK ON BROOKE</div></div>
-<script>
-var API="https://fegzfjftfgqjjgatihyi.supabase.co/functions/v1/trr-rsvp";
-function tog(a){var m=document.getElementById('menu');var ins=m.querySelectorAll('input[type=radio]');if(a){m.classList.add('open');document.querySelector('input[name=entree]').required=true;document.querySelector('input[name=dessert]').required=true;}else{m.classList.remove('open');ins.forEach(function(i){i.required=false;i.checked=false;});}}
-document.getElementById('f').addEventListener('submit',function(e){
- e.preventDefault();
- var btn=document.getElementById('btn'),err=document.getElementById('err');
- err.style.display='none';btn.disabled=true;btn.textContent='Reserving...';
- var fd=new FormData(e.target);
- fetch(API,{method:'POST',body:fd})
- .then(function(r){if(!r.ok)throw 0;return r;})
- .then(function(){
-   var name=(fd.get('full_name')||'').split(' ')[0]||'friend';
-   var acc=fd.get('attending')==='yes';
-   var msg=acc?'Your seat is reserved. We cannot wait to host you on September 17.':'Thank you for letting us know. You will be missed.';
-   document.querySelector('.wrap').innerHTML='<div class="hero"><div class="ring"><svg viewBox="0 0 210 210"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6a20"/><stop offset=".45" stop-color="#fff7d8"/><stop offset="1" stop-color="#8a6a20"/></linearGradient></defs><circle cx="105" cy="105" r="103" fill="none" stroke="url(#g2)" stroke-width="1.6"/></svg><div class="trr gold">TRR:</div><div class="solved">Solved.</div></div></div><div class="card" style="text-align:center;margin-top:-92px"><div class="rsvp-t" style="font-size:30px">Thank you, '+name+'.</div><div class="sub" style="margin-top:14px;font-size:19px">'+msg+'</div><div class="rule"></div></div><div class="foot">AN INVITATION FROM &middot; BANK ON BROOKE</div>';
-   window.scrollTo(0,0);
- })
- .catch(function(){btn.disabled=false;btn.textContent='Reserve My Seat';err.style.display='block';});
-});
-</script>
 </body></html>
